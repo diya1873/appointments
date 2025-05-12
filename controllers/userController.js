@@ -95,7 +95,7 @@ exports.registerUser = async (req, res) => {
         const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: '1h' });
 
         // رابط التحقق
-        const verificationLink = `http://localhost:5173/verify-email?token=${token}`;
+        const verificationLink = `https://frontappo-utmd-74d26x5i4-diya1873s-projects.vercel.app/verify-email?token=${token}`;
 
         // إرسال البريد الإلكتروني
         const emailResponse = await sendEmail(
